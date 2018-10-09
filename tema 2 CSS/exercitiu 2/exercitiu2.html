@@ -1,0 +1,151 @@
+<!Doctype html>
+<head>
+    <title>Exercitiul 2</title>
+    <style>
+        html, body{
+            margin:0;
+            padding:0;
+            background-color: beige;
+        }
+        body{
+            background-color: rgb(250, 249, 246);
+        }
+        .green-table{       
+            box-align:center;
+            box-sizing:border-box;
+            border-spacing: 30px 300px 0px 300px;
+            column-width:150px;
+            
+        }
+        .green-table thead th{
+            border:lawngreen 1px solid;
+            background: linear-gradient(lightgreen,yellow);
+            position:absolute;
+            top: 0px;
+            left: 100px;
+            width:1320px;
+        }
+        .green-table thead>tr>td>h1{
+            position:relative;
+            top:50px;
+            left:900px;
+        }
+        .green-table thead>tr>td>h3{
+            position:relative;
+            top:80px;
+            left:900px;
+        }  
+        .green-table tbody{
+            background-color:rgb(235, 229, 198);
+            position:fixed;
+            top: 130px;
+            left: 100px;
+        }
+        .green-table tbody>tr>td{
+            border: rgb(250, 249, 246) 1px solid;
+        }
+        #horizontal-list{
+            min-width: 696px;
+            list-style: none;
+            padding-top: 20px;
+            }
+        #horizontal-list li{
+            display:inline;
+            padding-left:140px;
+            
+        }   
+        .green-menu{
+            background-color:#b0dbb0;
+            padding: 10px;
+        }    
+        .menu-list {
+            text-decoration: underline;
+            color:rgb(28, 128, 28);
+        }
+        .coywright-color{
+            background: linear-gradient(lightgreen,yellow);
+        }
+    </style>
+</head>
+<body>
+    <table class="green-table">
+        <thead>
+            <tr>
+                <th colspan="6">
+                    <h1>Enter site title</h1>
+                    <h3>Enter site slogan</h3>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th colspan="6">
+                    <ul id="horizontal-list">
+                        <li>Home</li>
+                        <li>New page</li>
+                        <li>New page 2</li>
+                        <li>New page 3</li>
+                        <li>New page 4</li>
+                        <li>New page 5</li>
+                    </ul>
+                </th>  
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h2 class="green-menu">Main menu</h2>
+                    <ul class="menu-list">
+                        <li>Menu item 1</li>
+                        <li>Menu item 2</li>
+                        <li>Menu item 3</li>
+                        <li>Menu item 4</li>
+                        <li>Menu item 5</li>
+                        <li>Menu item 6</li>
+                        <li>Menu item 7</li>
+                        <li>Menu item 8</li>
+                    </ul>
+                </td>
+                <td colspan="4">
+                    <h3>Gallery</h3>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse at pede ut purus malesuada dictum.</br>
+                    Donec vitae neque non magna aliquam dictum.Tortor purus, luctus non, aliquam nec, interdum vel, mi.</br>
+                    Sed nec quamnec odio lacinia molestie. Praesent augue tortor, convallis eget, euismod</br>
+                    nonummy, lacinia ut, risus.</br>       
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <h2 class="green-menu"> Block</h2>
+                    Lorem ipsum dolor sit amet,</br>
+                    consectetuer adipiscing elit.</br>
+                    Suspendisse at pede ut purus malesuada dictum.</br>
+                </td>
+                <td colspan="2">
+                    <h2>Subscription</h2>
+                    Lorem ipsum dolor sit amet,</br>
+                    consectetuer adipiscing elit.</br>
+                    Suspendisse at pede ut purus malesuada dictum.</br>
+                    Lorem ipsum dolor sit amet,</br>
+                    consectetuer adipiscing elit.</br>
+                    Suspendisse at pede ut purus malesuada dictum.</br>
+                    <button>Read more</button>
+                </td>
+                <td colspan="2">
+                    <h2>Other services</h2>
+                    Lorem ipsum dolor sit amet,</br>
+                    consectetuer adipiscing elit.</br>
+                    Suspendisse at pede ut purus malesuada dictum.</br>
+                    Lorem ipsum dolor sit amet,</br>
+                    consectetuer adipiscing elit.</br>
+                    Suspendisse at pede ut purus malesuada dictum.</br>
+                    <button>Read more</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6" style="text-align: center;" class="coywright-color">
+                    <p>Copywright &copy; 2014.</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

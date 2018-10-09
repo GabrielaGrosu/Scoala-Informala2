@@ -1,0 +1,103 @@
+<!Doctype html>
+<head>
+    <title>Exercitiul 3</title>
+    <style>
+        html, body{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color:bisque;
+        }
+        table{
+            border-spacing: 0;
+            border-collapse: collapse;
+        }
+        #faq-table{
+            width:100%;
+        }
+        #faq-table thead>tr>*{
+            height:200px; 
+            background-color: rgb(181, 195, 46);
+            text-align:center; 
+            color:white;
+            font-size: 30px;
+        }
+        .menu-list{
+            list-style: none;
+            background-color: rgb(22, 22, 22);
+            color:white;   
+            position: relative; 
+            width: 100px;
+            top: -50px;
+        }
+        .menu-list li{
+            padding:10px;  
+        }
+        i {
+            border: solid rgb(151, 224, 151);
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            position:absolute;
+            right: 10px;
+            vertical-align: middle;
+        }
+        .arrow-down{
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+        .arrow-up{
+            transform: rotate(-135deg);
+            -webkit-transform: rotate(-135deg);
+        }
+        .setting-rows{
+            background-color: white;
+            margin-bottom: 10px;
+        }
+        .setting-rows h3{
+            color:limegreen;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+<table id="faq-table">
+    <thead>
+        <tr>
+            <td colspan="2">
+                FAQ template
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr rowspan="5">
+            <td>
+                <ul class="menu-list">
+                    <li>Basics</li>
+                    <li>Mobile</li>
+                    <li>Account</li>
+                    <li>Payment</li>
+                    <li>Privacy</li>
+                    <li>Delivery</li>
+                </ul>
+            </td>
+            <td>
+                <p>Basics</p>
+                <div class="setting-rows"><h3>How do I change my password?</h3><i class="arrow-down"></i></div>
+                <div class="setting-rows"><h3>How do I sign up?</h3><i class="arrow-up"></i>
+                    <br>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse at
+                        pede ut purus malesuada dictum. Donec vitae neque non magna aliquam
+                        dictum.
+                        Vestibulum et odio et ipsum accumsan accumsan. Morbi at arcu vel elit ultricies porta. Proin
+                        Tortor purus, luctus non, aliquam nec, interdum vel, mi. Sed nec quam
+                        nec odio lacinia molestie.</br>
+                </div>
+                <div class="setting-rows"><h3>Can I remove a post?</h3><i class="arrow-down"></i></div>
+                <div class="setting-rows"><h3>How do reviews work?</h3><i class="arrow-down"></i></div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
