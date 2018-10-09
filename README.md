@@ -1,0 +1,2 @@
+# Scoala-Informala2
+
