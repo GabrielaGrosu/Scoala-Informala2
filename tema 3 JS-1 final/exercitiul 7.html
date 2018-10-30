@@ -1,0 +1,29 @@
+<!Doctype html>
+<head>
+	<script>
+        function numarPrim(n){
+            for(var i=2; i<n;i++){
+                if(n%i===0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        function sumaNumerePrime(n){
+            var suma=0;
+            for(var i=2; i<=n;i++){
+                if(numarPrim(i)){
+                    suma=suma+i;
+                }
+            }
+            return suma;
+        }
+            console.log(sumaNumerePrime(4));
+            console.log(sumaNumerePrime(3));
+            console.log(sumaNumerePrime(10));
+            console.log(sumaNumerePrime(2));
+            console.log(sumaNumerePrime(-5));
+    </script>
+</head>
+<body></body>
+</html>

@@ -1,0 +1,21 @@
+<!Doctype html>
+<head>
+	<script>
+		function checkX(x,arr){
+			for(var i=0; i<arr.length; i++){  
+			  var valueArr = arr[i];        
+			  if(valueArr===x){
+			  	return "Exists";
+               }   
+            }        
+             return "Does not exist";
+        }   
+        console.log(checkX(-100,[10,5,9]));	
+        console.log(checkX(10,[10,5,9]));	
+        console.log(checkX(0,[10,-5,9,0]));
+        console.log(checkX(-100,[10,5,-100,9]));
+        console.log(checkX(-100,[10,5,100,9]));			
+	</script>
+</head>
+<body></body>
+</html>

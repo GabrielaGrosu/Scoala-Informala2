@@ -1,0 +1,23 @@
+<!Doctype html>
+<head>
+	<script>
+		function produsPozitive(arr){
+			var prod=1;
+			var y=arr[i];
+			for(var i=0; i<arr.length; i++){
+				if(arr[i]>0){
+				prod=prod*arr[i];
+				}
+			}	
+			    if(prod===1&&y<=0){
+			    prod="toate numerele sunt negative"		
+				}
+				return prod;
+		}    
+		console.log(produsPozitive([-1,4,-1]));
+		console.log(produsPozitive([-1,4,5, 10]));
+		console.log(produsPozitive([-1,-1]));
+	</script>
+</head>
+<body></body>
+</html>

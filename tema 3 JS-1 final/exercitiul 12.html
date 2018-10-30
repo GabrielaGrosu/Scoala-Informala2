@@ -1,0 +1,35 @@
+<!Doctype html>
+<head>
+	<script>
+        function maximArray(arr){
+            var max=arr[0];
+            for(var i=0; i<arr.length;i++){
+                if(max<arr[i]){
+                    max=arr[i];
+                }        
+            }
+            return max;
+        }
+        function minimArray(arr){
+            var min=arr[0];
+            for(var i=0; i<arr.length;i++){
+                if(min>arr[i]){
+                    min=arr[i];
+                }        
+            }
+            return min;
+        }
+        function SumMinMax(arr){
+           var suma;
+           for(var i=0; i<arr.length;i++){
+            suma = minimArray(arr)+maximArray(arr);
+           }
+           return suma;
+        }
+        console.log(SumMinMax([10, 20, 83, 34]));
+        console.log(SumMinMax([10, -20, 83, 34]));
+        console.log(SumMinMax([0, 20, 83, 34]));
+    </script>
+</head>
+<body></body>
+</html>

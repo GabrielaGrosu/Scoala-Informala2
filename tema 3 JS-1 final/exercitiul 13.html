@@ -1,0 +1,21 @@
+<!Doctype html>
+<head>
+	<script>
+		function sortNumbers(arr){
+			for(i=0; i<arr.length; i++){
+			    for(j=i+1; j<arr.length; j++){
+				    if(arr[i]===arr[j]){
+					  return "Exista duplicate";
+				    }
+			    }
+            }
+            return "Nu exista duplicate";
+        }
+        console.log(sortNumbers([3,4,1,5,5,4]));
+		console.log(sortNumbers([2,4,7,5,9,6]));
+		console.log(sortNumbers(["apa", "mare", "munte", "mare"]));
+		console.log(sortNumbers(["apa", "mare", "munte", "rosu"]));
+	</script>
+</head>
+<body></body>
+</html>

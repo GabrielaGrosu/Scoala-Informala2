@@ -1,0 +1,23 @@
+<!Doctype html>
+	<head>
+		<script>
+			   function reverseString(str){
+				   	var transformArr= str.split("");
+				   	var inversArr=transformArr.reverse();
+				   	var inversStr=inversArr.join("");
+				    return inversStr;
+			   	}
+			   	function checkPalindrom(str){
+			   		if (str===reverseString(str)){
+			   			return true;
+			   		}
+			   		return false;
+			   	}
+			   	console.log(checkPalindrom("-23"));
+			   	console.log(checkPalindrom("333"));
+			   	console.log(checkPalindrom("apa"));
+			   	console.log(checkPalindrom("earth"));
+		</script>
+	</head>
+	<body></body>
+</html>
