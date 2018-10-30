@@ -1,0 +1,239 @@
+<!DOCtype html>
+<head>
+    <title>Exercitiul 2</title>
+    <style>
+        html, body{
+            margin:0;
+            padding:0;
+        }
+        body{
+            background-color:ivory;
+            position:fixed;
+        }
+        #title{
+           position:relative;  
+           padding: 10px;
+           background: linear-gradient(lightgreen,lightyellow);
+           border-spacing: 0px;
+           color: grey;
+           border-collapse: collapse;
+           box-shadow: border-box;
+           margin: 20px 100px 10px 100px;
+           right: 0px;
+        }
+        #title h1, #title h3{
+            position: relative;        
+            left: 700px;
+            padding-bottom: 0px;
+            margin: 15px;
+        }
+        #content{  
+            position: relative;  
+            background-color:lemonchiffon;
+            margin: 20px 100px 10px 100px;
+            padding: 10px;
+        }
+        #horizontal-list{
+            position:relative;
+            box-sizing:border-box;
+            min-width: 696px;
+            list-style: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border: lightgrey 1px solid;
+            margin-top:5px;
+            background-color:#e8e0a0;
+            }
+        #horizontal-list li{
+            position:relative;
+            right:20px;       
+            display:inline;
+            padding-left:100px;
+            margin-left:30px;
+            vertical-align: center;
+        } 
+        #container1{
+            display: flex;  
+            flex-flow: row wrap;
+            text-align: left;
+        }
+        #container2{
+            display: flex;  
+            flex-flow: row wrap;
+            text-align: left;
+            margin-bottom: 5px;
+        } 
+        #vertical-menu{
+            box-sizing: border-box;
+            vertical-align: middle;
+            order:1;
+            flex:1;
+        }
+        #vertical-menu h3{
+            background-color: lightgreen;
+            padding: 10px 30px 10px 10px;
+            
+            vertical-align: middle;
+        }   
+        #arrow{
+            vertical-align: middle;
+        }
+        .menu-list{
+            list-style-type: none;
+           
+            text-decoration: underline;
+            text-decoration-color: green;
+            color: green;
+        }
+        #block-column{
+            box-sizing: border-box;
+            vertical-align: middle; 
+            flex:1;
+            order:1;                   
+        }
+        #block-column h3{
+            background-color: lightgreen;
+            padding: 10px 30px 10px 10px;
+            vertical-align: middle;
+        }  
+        #gallery{
+            padding: 10px 30px 10px 10px;
+            order:2;
+            flex:4;
+        }
+        #gallery h3{
+            padding: 10px 30px 10px 10px;
+        }  
+        #subscription{
+            flex:2;
+            order:2;  
+        } 
+        #subscription h3{
+            padding-left: 10px;
+        }
+        #subscription button{
+            background:linear-gradient(lightgreen,lightyellow);
+        }
+        #other_services{
+            flex:2;
+            order:3;  
+        }   
+        #other_services button{
+            background: linear-gradient(lightgreen,lightyellow); 
+        }
+        #footer_bar{
+            background: linear-gradient(lightgreen,lightyellow);
+            text-align: center;
+            height:30px; 
+        }
+        .vertical_line {
+            border-left: 2px solid #e8e0a0;
+            height: 450px;
+            position:absolute;
+            left:20.5%;
+            opacity:0.4;
+            }
+    </style>
+</head>
+<body>
+    <div id="title">
+        <h1>Enter site title</h1>
+        <h3>Enter site slogan</h3>
+    </div>
+    <div id="content">
+    <div id="horizontal-menu">
+            <ul id="horizontal-list">
+                <li>Home</li>
+                <li>New page</li>
+                <li>New page 2</li>
+                <li>New page 3</li>
+                <li>New page 4</li>
+                <li>New page 5</li>
+            </ul>
+    </div>
+    <div id="container1">
+        <div id="vertical-menu">
+            <h3>
+                <span id="arrow"><img src="right-arrow.svg" style="width:20px;"></span>
+                Main Menu
+            </h3>
+            <ul class="menu-list">
+                <li><img src="nine-squares.svg" style="width:14px"> Menu item 1</li>
+                <li><img src="nine-squares.svg" style="width:14px"> Menu item 2</li>
+                <li><img src="nine-squares.svg" style="width:14px"> Menu item 3</li>
+                <li><img src="nine-squares.svg" style="width:14px"> Menu item 4</li>
+                <li><img src="nine-squares.svg" style="width:14px"> Menu item 5</li>
+                <li><img src="nine-squares.svg" style="width:14px"> Menu item 6</li>
+                <li><img src="nine-squares.svg" style="width:14px"> Menu item 7</li>
+                <li><img src="nine-squares.svg" style="width:14px"> Menu item 8</li>
+            </ul>
+        </div>
+        <div class="vertical_line"></div>
+        <div id="gallery">
+            <h3>Gallery</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse at
+                pede ut purus malesuada dictum. Donec vitae neque non magna aliquam
+                dictum.
+                Tortor purus, luctus non, aliquam nec, interdum vel, mi. Sed nec quam
+                nec odio lacinia molestie. Praesent augue tortor, convallis eget, euismod
+                nonummy, lacinia ut, risus.
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse at
+                pede ut purus malesuada dictum. Donec vitae neque non magna aliquam
+                dictum.
+                Tortor purus, luctus non, aliquam nec, interdum vel, mi. Sed nec quam
+                nec odio lacinia molestie. Praesent augue tortor, convallis eget, euismod
+                nonummy, lacinia ut, risus.
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse at
+                pede ut purus malesuada dictum. Donec vitae neque non magna aliquam
+                dictum.
+                Tortor purus, luctus non, aliquam nec, interdum vel, mi. Sed nec quam
+                nec odio lacinia molestie. Praesent augue tortor, convallis eget, euismod
+                nonummy, lacinia ut, risus.
+                Tortor purus, luctus non, aliquam nec, interdum vel, mi. Sed nec quam
+                nec odio lacinia molestie. Praesent augue tortor, convallis eget, euismod
+                nonummy, lacinia ut, risus.
+            </p>    
+        </div>
+   </div>
+   <div id="container2">
+        <div id="block-column">
+            <h3>
+                <span id="arrow"><img src="right-arrow.svg" style="width:20px;"></span>
+                Block
+            </h3>
+            <br>Enter content here...</br>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+            </p>
+        </div>
+        <div id="subscription">
+            <h3>Subscription</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse at
+                pede ut purus malesuada dictum. Donec vitae neque non magna aliquam
+                dictum.
+                Tortor purus, luctus non, aliquam nec, interdum vel, mi. Sed nec quam
+                nec odio lacinia molestie. Praesent augue tortor, convallis eget, euismod
+                nonummy, lacinia ut, risus.
+            </p>
+            <button>Read more</button>
+        </div>
+        <div id="other_services">
+            <h3>Other services</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Suspendisse at
+                pede ut purus malesuada dictum. Donec vitae neque non magna aliquam
+                dictum.
+                Tortor purus, luctus non, aliquam nec, interdum vel, mi. Sed nec quam
+                nec odio lacinia molestie. Praesent augue tortor, convallis eget, euismod
+                nonummy, lacinia ut, risus.
+            </p>
+            <button>Read more</button>
+        </div>
+    </div>  
+    <div id="footer_bar">
+         Copyright &copy; 2014.
+    </div> 
+</body>
+</html>
