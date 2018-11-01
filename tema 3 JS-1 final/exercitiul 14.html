@@ -9,14 +9,30 @@
 				prod=prod*arr[i];
 				}
 			}	
-			    if(prod===1&&y<=0){
-			    prod="toate numerele sunt negative"		
-				}
 				return prod;
-		}    
-		console.log(produsPozitive([-1,4,-1]));
-		console.log(produsPozitive([-1,4,5, 10]));
-		console.log(produsPozitive([-1,-1]));
+		}
+		function produsNegative(arr){
+       	var prod=1;
+       	for(var i=0; i<arr.length; i++){
+      		 if(produsPozitive(arr)===1){
+      			 return "nu exista nici un numar pozitiv diferit de 1";
+      		 }
+       	}
+   	    }
+		function produsFinalPozitive(arr){
+			var prod=1;
+			for(var i=0; i<arr.length; i++){
+				if(produsPozitive(arr)>1){
+					return produsPozitive(arr);
+				}
+			return produsNegative(arr);}
+		}
+		console.log(produsFinalPozitive([-1,4,-1]));
+		console.log(produsFinalPozitive([-1,4,5,11, 10]));
+		console.log(produsFinalPozitive([-1,4,0, 10]));
+		console.log(produsFinalPozitive([-1,-5]));
+		console.log(produsFinalPozitive([-1,-5, 1]));
+		console.log(produsFinalPozitive([-1,-5, 1, "text", "area"]));   	
 	</script>
 </head>
 <body></body>
