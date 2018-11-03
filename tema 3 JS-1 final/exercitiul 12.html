@@ -1,28 +1,18 @@
 <!Doctype html>
 <head>
 	<script>
-        function maximArray(arr){
-            var max=arr[0];
-            for(var i=0; i<arr.length;i++){
-                if(max<arr[i]){
-                    max=arr[i];
-                }        
-            }
-            return max;
-        }
-        function minimArray(arr){
-            var min=arr[0];
-            for(var i=0; i<arr.length;i++){
-                if(min>arr[i]){
-                    min=arr[i];
-                }        
-            }
-            return min;
-        }
         function SumMinMax(arr){
+           var max=arr[0];
+           var min=arr[0];
            var suma;
            for(var i=0; i<arr.length;i++){
-            suma = minimArray(arr)+maximArray(arr);
+                if(max<arr[i]){
+                    max=arr[i];
+                }
+                if(min>arr[i]){
+                    min=arr[i];
+                }
+                suma = max+min;
            }
            return suma;
         }

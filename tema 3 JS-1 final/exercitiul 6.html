@@ -4,10 +4,10 @@
         function numarPrim(n){
             for(var i=2; i<n;i++){
                 if(n%i===0){
-                    return "nu este prim";
+                    return false;
                 }
             }
-            return "este prim";
+            return true;
         }
             console.log(numarPrim(4));
             console.log(numarPrim(0));

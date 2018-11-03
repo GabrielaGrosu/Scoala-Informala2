@@ -2,10 +2,11 @@
 	<head>
 		<script>
 			   function reverseString(str){
-				   	var transformArr= str.split("");
-				   	var inversArr=transformArr.reverse();
-				   	var inversStr=inversArr.join("");
-				    return inversStr;
+				   var inverseStr="";
+						for(var i=str.length-1; i>=0; i--){
+							inverseStr=inverseStr+str[i];
+						}
+					return inverseStr;
 			   	}
 			   	console.log(reverseString("23"));
 			   	console.log(reverseString("apa plata"));

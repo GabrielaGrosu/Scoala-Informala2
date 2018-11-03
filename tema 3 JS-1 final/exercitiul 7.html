@@ -2,7 +2,7 @@
 <head>
 	<script>
         function numarPrim(n){
-            for(var i=2; i<n;i++){
+            for(var i=2; i<n; i++){
                 if(n%i===0){
                     return false;
                 }
@@ -11,7 +11,8 @@
         }
         function sumaNumerePrime(n){
             var suma=0;
-            for(var i=2; i<=n;i++){
+            var total=Math.abs(n)*((n+1)/2);
+            for(var i=2; i<=total; i++){
                 if(numarPrim(i)){
                     suma=suma+i;
                 }
@@ -23,6 +24,7 @@
             console.log(sumaNumerePrime(10));
             console.log(sumaNumerePrime(2));
             console.log(sumaNumerePrime(-5));
+            console.log(sumaNumerePrime(-50));
     </script>
 </head>
 <body></body>

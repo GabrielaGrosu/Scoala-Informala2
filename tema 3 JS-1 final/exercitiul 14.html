@@ -13,19 +13,16 @@
 		}
 		function produsNegative(arr){
        	var prod=1;
-       	for(var i=0; i<arr.length; i++){
       		 if(produsPozitive(arr)===1){
-      			 return "nu exista nici un numar pozitiv diferit de 1";
+      			 return 0;
       		 }
-       	}
    	    }
 		function produsFinalPozitive(arr){
 			var prod=1;
-			for(var i=0; i<arr.length; i++){
 				if(produsPozitive(arr)>1){
 					return produsPozitive(arr);
 				}
-			return produsNegative(arr);}
+			return produsNegative(arr);
 		}
 		console.log(produsFinalPozitive([-1,4,-1]));
 		console.log(produsFinalPozitive([-1,4,5,11, 10]));
