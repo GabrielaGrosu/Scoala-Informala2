@@ -11,10 +11,11 @@
         }
         function sumaNumerePrime(n){
             var suma=0;
-            var total=Math.abs(n)*((n+1)/2);
-            for(var i=2; i<=total; i++){
+            var countPrime=0;
+            for(var i=2; countPrime<n; i++){
                 if(numarPrim(i)){
                     suma=suma+i;
+                    countPrime=countPrime+1;
                 }
             }
             return suma;
