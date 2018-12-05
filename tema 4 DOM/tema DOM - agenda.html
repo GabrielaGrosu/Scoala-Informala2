@@ -52,7 +52,7 @@
 	<script>
 		var indexEditare = -1;
 		var contacte = [];
-		
+
 		function deseneazaFormular() {
 			var str1 = "";
 			var str2 = "";
@@ -67,47 +67,49 @@
    					   	<td onclick="modifica(${i})"><a>Modifica</a></td>
    					   	<td onclick="sterge(${i})"><a>Sterge</a></td>
    			       	</tr>` ;
+
+				if (contacte.length === 0) {
+					document.querySelector(".container2").classList.remove("visible");
+				} else {
+					document.querySelector(".container2").classList.add("visible");
+				}
 			}
 			console.log(str1, str2);
-			
 			document.querySelector("table").innerHTML = str1 + str2;
-			
-		}
-		function validareDate(p, event, nr) {
-			var date = p.value;
-			if (date.length<nr) {
-				p.classList.add("invalid");
-			} else {
-				p.classList.remove("invalid");
-			}
-		}
-		function validareFormular(form,event) {
-			event.preventDefault();
-			validareDate(document.querySelector("#telefon"), event, 10);
+
 		}
 		function adaugare(s, event) {
 			event.preventDefault();
-			var contact = {};
-			var inputs = s.querySelectorAll("input[name]");
-			for (var i = 0; i < inputs.length; i++) {
-				var b = inputs[i].getAttribute("name");
-				var c = inputs[i].value;
-				contact[b] = c;
-			}
-			if (indexEditare === -1) {
-				contacte.push(contact);
+			var date = document.querySelector("#telefon").value;
+			if (date.length < 10) {
+				document.querySelector("#telefon").classList.add("invalid");
 			} else {
-				contacte.splice(indexEditare, 1, contact);
-				indexEditare = -1
+				document.querySelector("#telefon").classList.remove("invalid");
+				var contact = {};
+				var inputs = s.querySelectorAll("input[name]");
+				for (var i = 0; i < inputs.length; i++) {
+					var b = inputs[i].getAttribute("name");
+					var c = inputs[i].value;
+					contact[b] = c;
+				}
+				if (indexEditare === -1) {
+					contacte.push(contact);
+				} else {
+					contacte.splice(indexEditare, 1, contact);
+					indexEditare = -1
+				}
+				deseneazaFormular();
+				s.reset();
 			}
-
-			deseneazaFormular();
-			s.reset();
 		}
 		function sterge(id) {
 			if (confirm("Do you want to delete?")) {
 				contacte.splice(id, 1);
-				deseneazaFormular();
+				if (contacte.length === 0) {
+					document.querySelector(".container2").classList.remove("visible");
+				} else {
+					deseneazaFormular();
+				}
 			}
 		}
 		function modifica(id) {
@@ -120,24 +122,17 @@
 			console.log(id, persoana);
 			indexEditare = id;
 		}
-		function containerStyle(m,event) {
-			var stil = document.querySelector(".container2.visible");
-			if (stil !== null) {
-				stil.classList.remove("visible");
-			}
-			document.querySelector(".container2").classList.add("visible");
-		}
 	</script>
 </head>
 
 <body onload="deseneazaFormular();">
 	<h1>Agenda</h1>
 	<div id="container1">
-		<form  onsubmit="validareFormular(this,event);adaugare(this,event);containerStyle(this,event)">
+		<form id="formAdaugare" onsubmit="adaugare(this,event);">
 			Nume:
 			<input name="nume" type="text" />
 			Telefon:
-			<input name="telefon" type="text" id="telefon" onchange="validareDate(this,event,10)" /><br />
+			<input name="telefon" type="text" id="telefon" /><br />
 			<input type="Submit" value="Adauga contact" id="adauga">
 		</form>
 	</div>
