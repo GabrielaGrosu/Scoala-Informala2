@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        h3{
+            text-align: left;
+            padding-left:260px;
+        }
+        body{
+            background-color: plum;
+        }
+        .green{
+            background-color:#44b844b0;
+            border-radius: 5px;
+        }
+        .purple{
+            background-color:plum;
+            border-radius: 5px;
+        }
+        .red{
+            background-color: rgb(207, 90, 90);
+        }
+        #chenar{
+            background-color: white;
+            width:50%;
+            margin-right: auto;
+            margin-left: auto;
+            text-align: center;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        #listaCumparaturi{
+            padding-top:15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+        #sortari{
+            padding:15px 0 15px 260px;
+            text-align: left;
+        }
+        .striketrough{
+            text-decoration: line-through;
+        }
+        .element{
+            border: 1px rgb(44, 147, 182) solid ;
+        }
+    </style>
+    <script>
+        var liste = [];
+        console.log(liste);
+        function getLista() {
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    liste = JSON.parse(this.responseText);
+                    deseneazaTabel();
+                }
+            };
+            xhttp.open("GET", "https://ajax-shopping-list.firebaseio.com/.json", true);
+            xhttp.send();
+        }
+        function deseneazaTabel() {
+            var str1 = "";
+            var str2 = "";
+            for (var i in liste) {
+                var m = "";
+                if (liste[i] === null) {
+                    continue;
+                }
+                if (liste[i].marcat === true) {
+                    m = "striketrough";
+                }
+                str1 = `<tr>
+                            <td>
+                                <strong>Item description</strong>
+                            </td>
+                            <td>
+                                <strong>Action</strong>
+                            </td>
+                       </tr>`;
+
+                str2 += `<tr class="${m}">
+                            <td  tab='${i}'>${liste[i].lista}</td>
+                            <td>
+                            <button onclick="taiere('${i}');" class="red">Mark as buyed</button>
+                            </td>
+                        </tr>`;
+            }
+            console.log(str1, str2);
+            document.querySelector("table").innerHTML = str1 + str2;
+        }
+        function taiere(art) {
+            if (liste[art].marcat === true) {
+                (liste[art].marcat = false);
+                var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    getLista();
+                }
+            };
+            xhttp.open("PUT", `https://ajax-shopping-list.firebaseio.com/${art}/marcat.json`, true);
+            xhttp.send(JSON.stringify(false));
+            deseneazaTabel();
+        }
+             else {
+                (liste[art].marcat = true);
+                   var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    getLista();
+                }
+            };
+            xhttp.open("PUT", `https://ajax-shopping-list.firebaseio.com/${art}/marcat.json`, true);
+            xhttp.send(JSON.stringify(true));
+            deseneazaTabel();
+            }
+        
+        }
+        function sortareAsc(coloana, event) {
+              
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                    getLista();
+                    }
+                };
+                xhttp.open("GET", `https://ajax-shopping-list.firebaseio.com/.json`, true);
+                xhttp.send();
+               liste = Object.values(liste);
+               liste.sort(function (a, b) {
+
+                if (a[coloana] > b[coloana]) {
+                    return 1;
+                }
+                if (a[coloana] < b[coloana]) {
+                    return -1;
+                }
+                return 0;
+            });
+            console.log(liste);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    getLista();
+                }
+            };
+            xhttp.open("PUT", "https://ajax-shopping-list.firebaseio.com/.json", true);
+            xhttp.send(JSON.stringify(liste));
+            deseneazaTabel();
+        };
+
+        function sortareDesc(coloana, event) {
+            var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200) {
+                    getLista();
+                    }
+                };
+                xhttp.open("GET", `https://ajax-shopping-list.firebaseio.com/.json`, true);
+                xhttp.send();
+               liste = Object.values(liste);
+            liste.sort(function (a, b) {
+                if (a[coloana] > b[coloana]) {
+                    return -1;
+                }
+                if (a[coloana] < b[coloana]) {
+                    return 1;
+                }
+                return 0;
+            });
+            console.log(liste);
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    getLista();
+                }
+            };
+            xhttp.open("PUT", "https://ajax-shopping-list.firebaseio.com/.json", true);
+            xhttp.send(JSON.stringify(liste));
+            deseneazaTabel();
+        }
+        function adauga(t, event) {
+            event.preventDefault();
+
+            var art = {
+                marcat: false
+            };
+
+            var inputs = t.querySelectorAll("input[name]");
+            for (var i = 0; i < inputs.length; i++) {
+                var a = inputs[i].getAttribute("name");
+                var v = inputs[i].value;
+                art[a] = v;
+            }
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    getLista();
+                }
+            };
+            xhttp.open("POST", "https://ajax-shopping-list.firebaseio.com/.json", true);
+            xhttp.send(JSON.stringify(art));
+            deseneazaTabel();
+        }
+
+    </script>
+</head>
+
+<body onload="getLista();">
+    <div id="chenar">
+        <div>
+            <h3>SHOPPING LIST</h3>
+        </div>
+        <form id="tabelAdaugare" onsubmit="adauga(this,event)">
+            <input class="element" name="lista" type="text" />
+            <input type="submit" value="Add item" class="green" />
+        </form>
+        <div id="sortari">
+            <button onclick="sortareAsc('lista',event);" class="purple">Sort asc</button>
+            <button onclick="sortareDesc('lista',event);" class="purple">Sort desc</button>
+        </div>
+        <table id="listaCumparaturi">
+        </table>
+    </div>
+</body>
+
+</html>
