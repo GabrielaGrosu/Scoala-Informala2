@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+	<head>
+		<style>
+			body,
+			html {
+				margin: 20px 50px 0 50px;
+				padding: 0;
+				background-color: #67c8be;
+			}
+
+			h1 {
+				display: inline;
+			}
+
+			.contact {
+				display: inline;
+				float: right;
+				background-color: #2196F3;
+				border-radius: 3px;
+				width: 60px;
+				height: 30px;
+			}
+
+			.meniu {
+				display: inline;
+				float: right;
+				background-color: red;
+				border-radius: 3px;
+				width: 60px;
+				height: 30px;
+			}
+
+			#search_box {
+				box-sizing: border-box;
+				margin-top: 50px;
+			}
+			.culoareMeniu{
+				color: white;
+				text-decoration: none;
+		    }
+			.culoareContact{
+				color: white;
+				text-decoration: none;	
+			}
+		</style>
+		<script>
+			var lista = {};
+			var detalii = location.search.substring(4);
+			console.log(lista);
+			function getLista() {
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function () {
+					if (this.readyState == 4 && this.status == 200) {
+						lista = JSON.parse(this.responseText);
+						deseneazaTabel();
+					}
+				};
+				xhttp.open("GET", `https://lista-alimente.firebaseio.com/${detalii}.json`, true);
+				xhttp.send();
+			}
+			function deseneazaTabel() {
+				document.getElementById("poza").src = lista.imagine;
+				document.getElementById("nume").innerHTML = lista.nume;
+				document.getElementById("reteta").innerHTML = lista.reteta;
+			}
+		</script>
+	</head>
+
+	<body onload="getLista()">
+		<div>
+			<h1>Cald si bun</h1>
+			<button class="contact">
+				<a href="clasa 14 harta.html" class="culoareContact">Contact</a>
+			</button>
+			<button class="meniu">
+				<a href="clasa 14 restaurant.html" class="culoareMeniu">Meniu</a>
+			</button>
+		</div>
+		<table>
+			<tr>
+				<td>
+					<img width="500" src="lista.imagine" id="poza" />
+				</td>
+			<tr>
+				<td>
+					<h3 id="nume">lista.nume</h3>
+				</td>
+			</tr>
+			<tr>
+				<td id="reteta">lista.reteta</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

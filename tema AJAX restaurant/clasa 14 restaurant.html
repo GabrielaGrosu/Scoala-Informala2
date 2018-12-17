@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+	<head>
+	<style>
+		body,
+		html {
+			margin: 20px 50px 0 50px;
+			padding: 0;
+			background-color: #67c8be;
+		}
+		
+		h1 {
+			display: inline;
+		}
+
+		.contact {
+			display: inline;
+			float: right;
+			background-color: #2196F3;
+			text-decoration: none;
+		}
+		#search_box{
+			box-sizing: border-box;
+			margin-top:50px;
+		}
+		a{
+			text-decoration: none;
+		}
+		.detalii{
+			background-color: red;
+			border-radius: 3px;
+			width: 60px;
+			height: 30px;
+		}
+		.cauta{
+			background-color: #dd93dd;
+			color: white;
+		}
+		#contactare{
+			color: white;
+		}
+		#detaliere{
+			color: white;
+		}
+	</style>
+	<script>
+		var lista=[]
+		console.log(lista);
+		function getLista(){
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {			   
+						lista = JSON.parse(this.responseText);		  
+						deseneazaTabel();
+						}
+					};
+					xhttp.open("GET", "https://lista-alimente.firebaseio.com/.json", true);
+					xhttp.send();
+				}
+		function deseneazaTabel(){
+					var str = "";
+				var produse= document.getElementById("ingredient").value;
+					for(var i in lista){
+					if (lista[i] === null) {
+						continue;
+					}  
+						if(lista[i].ingrediente.indexOf(produse) > -1){
+						str += `<tr>
+								<td><img width="100"  src="${lista[i].imagine}"/></td>
+									<td>
+									<strong>${lista[i].nume}</strong><br/>
+									${lista[i].ingrediente}
+								</td>
+
+									<td>
+										<button class="detalii"><a href="clasa_14detalii.html?id=${i}" id="detaliere">Detalii</a></button>
+									</td>
+								</tr>`;
+					}
+					}
+					console.log(str);
+					document.querySelector("table").innerHTML=str;
+				}
+	</script>
+	</head>
+
+	<body onload="getLista()">
+	<div>
+		<h1>Cald si bun</h1>
+		<button class="contact"><a href="clasa 14 harta.html" id="contactare">Contact</a></button>
+	</div>
+	<div id="search_box">
+		<input type="text" id="ingredient">
+		<button class="cauta" onclick="deseneazaTabel()">Cauta in ingrediente</button>
+	</div>
+	<table>
+	</table>
+	</body>
+
+</html>
