@@ -1,0 +1,52 @@
+body {
+    background-color: lightblue;
+}
+
+.informatii {
+    float: right;
+    right: 50px;
+    width: 1300px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: darkblue;
+}
+
+input[type=text] {
+    float: right;
+    margin-top: 10px;
+    margin-right:45px;
+}
+input[type=url] {
+    float: right;
+    margin-top: 10px;
+    margin-right:45px;
+}
+
+.salvare {
+    margin: 10px 0 0 40px;
+    padding: 7px;
+    background-color: #35a1f7;
+    color: white;
+}
+
+input[name=ingrediente],
+input[name=reteta] {
+    padding-top: 20px;
+}
+
+label[for=link],
+label[for=name] {
+    float: left;
+    margin: 13px 10px 10px 0;
+    padding-left: 40px;
+}
+
+label[for=ingrediente],
+label[for=reteta] {
+    float: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 40px;
+}

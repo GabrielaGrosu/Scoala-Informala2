@@ -1,0 +1,37 @@
+body,
+html {
+    margin: 20px 50px 0 50px;
+    padding: 0;
+    background-color: #67c8be;
+}
+
+h1 {
+    display: inline;
+}
+
+#reteta {
+    display: inline;
+    float: right;
+    background-color: #2196F3;
+
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+#modifica{
+    background-color: #2196F3;
+    display: inline;
+    float: right;
+    margin-right:130px;
+}
+#sterge{
+    background-color: red;
+    display: inline;
+    float: right;
+    margin-top:-30px;
+    margin-right:50px;
+}
+button{
+    padding:5px;
+}
