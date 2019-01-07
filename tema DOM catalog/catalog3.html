@@ -1,0 +1,172 @@
+<!Doctype html>
+    <style>
+        #note_elev_wrapper{
+            float:right;
+            margin-top: 0px;
+            display :none;
+        }    
+        #lista_elevi_wrapper{
+            float :left;
+            
+        }    
+        #note_elev_wrapper.visible{
+           display: block;  
+       }
+    </style>
+    <script>
+        var elevi = [];
+        var catalog=[];
+        var nodeList= document.querySelectorAll("#nume_elev");
+        const Elev=class Elev{
+            constructor (fullName){
+                this.elevName=fullName;
+            }
+            get Name(){
+                return this.computeName();
+            }
+            computeName(){
+                return this.elevName;
+            }
+        }
+        const Catalog = class Catalog{
+       	constructor(nota){
+           	this.catalogNota=nota;
+       	}
+       	get Nota(){
+        	return this.ComputeNota();
+       	}
+       	computeNota(){
+        	return this.catalogNota;
+       	}
+   	}
+        function vizibil(id) {
+            /*for (var i = 0; i < elevi.length; i++) {
+                 elev = {
+                    name: `${elevi[i].nume}`,
+                    get nume() {
+                        return this.name;
+                    }
+                }
+            }*/
+
+            const e= new Elev(elevi[id].nume);
+            document.getElementById("nume_elev").innerHTML = e.elevName;
+            document.querySelector("#note_elev_wrapper").classList.add("visible") ;
+        }
+        function invizibil(){
+            document.querySelector("#note_elev_wrapper").classList.remove("visible") ;
+        }
+        function deseneazaTabel() {
+            let str = "";
+            for (var i = 0; i < elevi.length; i++) {
+                str += `
+                    <tr>
+                        <td id="elev_nume">${elevi[i].nume}</td>
+                        <td id="medie"></td>
+                        <td>
+                            <button onclick="vizibil(${i})">Vezi notele</button>
+                        </td>
+                    </tr>`
+            }
+            document.querySelector("table tbody").innerHTML = str;
+        }
+        function adauga(m, event) {
+            event.preventDefault();
+            let elev = {};
+            let inputs = m.querySelectorAll("input[name]");
+            for (var i = 0; i < inputs.length; i++) {
+                let a = inputs[i].getAttribute("name");
+                let b = inputs[i].value;
+                elev[a] = b;
+            }
+            elevi.push(elev);
+            deseneazaTabel();
+        }
+        function adaugaNota(s, event){
+            event.preventDefault();
+            let nota={};
+            let inputs= document.querySelectorAll("#form_elev input[name]");
+          for( var i=0; i<inputs.length; i++){
+           let a=inputs[i].getAttribute("name");
+           let b=inputs[i].value;
+            nota[a]=b;
+        } ;
+        catalog.push(nota);
+        elevi.push(nota);
+        deseneazaCatalog();
+        deseneazaTabel() ;  
+        }
+        function deseneazaCatalog(){
+            let str=""; 
+            
+            for (let i = 0; i < catalog.length; i++){
+                str+=`<tr>
+                        <td>${catalog[i].nota_elev}<td>
+                    </tr>`
+            }
+            document.getElementById("catalog").innerHTML =str;
+            //const c=new Catalog(catalog(elevi[m].nota_elev));
+         // document.getElementById("medie").innerHTML=c.catalogNota;
+            
+    
+
+           /* for (let i = 0; i < catalog.length; i++){
+
+                str2+=`<tr>
+                        <td>${catalog[i].nota_elev}<td>
+                    </tr>`
+            }
+            document.getElementById("medie").innerHTML =str2;*/
+        };
+       //add set
+        
+    </script>
+
+    <body onload="deseneazaTabel()">
+        <div id="lista_elevi_wrapper">
+            <h2>Lista elevi</h2>
+            <form onsubmit="adauga(this,event)">
+                <label>Nume:</label>
+                <input name="nume" type="text">
+                <input type="submit" value="Adauga elev">
+            </form>
+            <table>
+                <button>Sorteaza ascendent notele</button>
+                <button>Sorteaza descendent notele</button>
+                <thead>
+                    <tr>
+                        <td>Nume</td>
+                        <td>Medie note</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div id="note_elev_wrapper">
+                <button onclick="invizibil()">Ascunde notele</button>
+                <h2>Note elev:<span id="nume_elev"></span></h2>
+                <form id="form_elev" onsubmit="adaugaNota(this, event)">
+                        <label>Nota:</label>
+                        <input name="nota_elev" type="number">
+                        <input type="submit" value="Adauga nota">
+                </form>
+                
+                    <button>Sorteaza ascendent notele</button>
+                    <button>Sorteaza descendent notele</button>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Nota</td>
+                            </tr>
+                        </thead>
+                        <tbody id="catalog">
+                        </tbody>
+                    </table>
+                
+        </div>
+
+    </body>
+
+</html>
