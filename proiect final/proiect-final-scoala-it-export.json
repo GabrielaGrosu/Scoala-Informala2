@@ -1,0 +1,75 @@
+{
+  "cos" : []
+  ,
+  "produse" : [
+    {
+      "detalii" : "Material: inox",
+      "imagine" : "tacamuri.jpg",
+      "nume" : "Set tacamuri 16 piese",
+      "pret" : 120,
+      "stoc" : 10
+    },
+    {
+      "detalii" : "Material:inox",
+      "imagine" : "https://s4.vivre.eu/upload/2015/09/thumbs/55eeb1b68a35c0.18756124.459x388.jpg",
+      "nume" : "Separator oua",
+      "pret" : 30,
+      "stoc" : 5
+    },
+     {
+      "detalii" : "Material: bambus",
+      "imagine" : "https://s1.vivre.eu/upload/2018/02/thumbs/5a7b2531ec6e06.80348556.459x388.jpg",
+      "nume" : "Suport pentru servetele",
+      "pret" : 50,
+      "stoc" : 7
+    },
+    {
+      "detalii" : "Material: lemn de fag",
+      "imagine" : "https://s4.vivre.eu/upload/2015/03/thumbs/54f9b0537b4883.32129489.459x388.jpg",
+      "nume" : "Cleste pentru bucatarie",
+      "pret" : 30,
+      "stoc" : 20
+    },
+   {
+      "detalii" : "Material: inox",
+      "imagine" : "https://s3.vivre.eu/upload/2014/05/thumbs/5373519f33d286.57235965.459x388.jpg",
+      "nume" : "Cleste pentru carne",
+      "pret" : 30,
+      "stoc" : 20
+    },
+    {
+      "detalii" : "Material: plastic ABS, fire din nailon",
+      "imagine" : "https://s1.vivre.eu/upload/2018/10/thumbs/5bcee59b1eeb20.89003421.459x388.jpg",
+      "nume" : "Perie pentru legume",
+      "pret" : 11,
+      "stoc" : 10
+    },
+    {
+      "detalii" : "Material: sticla termorezistenta pyrex, inox",
+      "imagine" : "https://s4.vivre.eu/upload/2017/06/thumbs/59490c0d274c44.44163666.459x388.jpg",
+      "nume" : "Cana pentru spuma de lapte",
+      "pret" : 19,
+      "stoc" : 5
+    },
+    {
+      "detalii" : "Material: lemn de bambus",
+      "imagine" : "https://s1.vivre.eu/upload/2017/08/thumbs/5982cbde072d34.90084927.459x388.jpg",
+      "nume" : "Set spatule",
+      "pret" : 23,
+      "stoc" : 9
+    },
+    {
+      "detalii" : "Material: inox",
+      "imagine" : "https://s3.vivre.eu/upload/2015/04/thumbs/5524fcab6e90f4.62430806.459x388.jpg",
+      "nume" : "Cana gradata 600 ml",
+      "pret" : 19,
+      "stoc" : 8
+    },
+    {
+      "detalii" : "Material: inox",
+      "imagine" : "https://s2.vivre.eu/upload/2015/02/thumbs/54d494a7155cb2.12203318.459x388.jpg",
+      "nume" : "Curatator legume",
+      "pret" : 11,
+      "stoc" : 6
+    }]
+}

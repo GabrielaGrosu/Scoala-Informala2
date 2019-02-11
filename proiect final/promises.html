@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<head>
+    <script>
+        /*
+         const setTimeout = new Promise (function(resolve, reject) {
+             if ( typeof parametru === 'string'){
+                 resolve(parametru.toUpperCase(), 500)
+             } else{
+                 reject(parametru);
+             }
+         }*/
+        function delayedUperCase(a) {
+            return new Promise(function (resolve, reject) {
+                setTimeout(function () {
+                    if (typeof a === 'string') {
+                        resolve(a.toUpperCase());
+                    } else {
+                         reject(a) };
+                }, 500);
+            });
+        }
+        delayedUpperCase("ana are mere")
+        .then(function(result){
+            console.log("then", result);
+        })
+        .catch(function(result){
+            console.log("catch", result);
+        })
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

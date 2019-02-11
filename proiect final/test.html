@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="proiect_final.css">
+    <link rel="stylesheet" type="text/css" href="owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css" href="owl.theme.default.min.css">
+
+
+    <style>
+        body,html{
+   margin:0;
+   padding:0;
+   background-color: #36c99a;
+  }
+  #poza{
+   display: inline;
+   width: 350px;
+   padding:50px;
+  }
+  .src_style{
+   width: 20px;
+  }
+  #titlu{
+   display:inline;
+   margin-left:200px;
+  }
+  #header_style{
+   margin:30px 115px 0 0;
+  }
+  .cos{
+   display: inline;
+   float: right;
+   padding:5px 15px;
+   margin-left:5px;
+   background-color:white;
+   border-radius: 3px;
+  }
+  .informatii_produs{
+   display: inline;
+   float: right;
+   padding:50px;
+  }
+  input[name=cantitate]{
+   width:40px;
+  }
+  input[type=submit]{
+   margin-top:5px;
+  }
+  .spatiere{
+   border:  1px solid lightgrey;
+   margin: 50px 100px 100px 200px;
+  }
+  #snackbar{
+   display:none;
+  }
+  #snackbar.visible{
+  background-color: rgb(170, 170, 170);
+  color:white;
+  height:30px;
+  padding-top: 10px;
+  display:block;
+   text-align: center;
+  }
+  a {
+   	text-decoration: none;
+   	color: black;
+   }
+   #stocInsuficient{
+      	color:red;
+      	display:block;
+  	}
+   #stocInsuficient.invisible{
+   	display:none;
+
+   }
+   #lei{
+   	display:inline-block;
+   	padding-top: 15px ;
+   }
+   #pret{
+   	display: inline-block;
+   	padding-top: 15px ;
+   }
+   .imagine{
+   	text-align:center;
+   	float:left;
+   	display: inline;
+   }
+</style>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="owl.carousel.min.js"></script>
+
+    <script>
+
+        var cos = [];
+        var cosNou = []
+        var lista = {};
+        var detalii = location.search.substring(4);
+        var index = -1;
+        var id = 0;
+        console.log(lista);
+        function getLista() {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    lista = JSON.parse(this.responseText);
+
+                }
+            };
+            xhttp.open("GET", `https://proiect-final-scoala-it.firebaseio.com/produse/${detalii}.json`, true);
+            xhttp.send();
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+
+
+  <div class="owl-carousel owl-theme">
+        <div class="item">
+            <img src="mare.jpg" class="img-fluid" alt="12">
+        </div>
+        <div class="item">
+            <img src="mare.jpg" class="img-fluid" alt="12">
+        </div>
+        <div class="item">
+            <img src="mare.jpg" class="img-fluid" alt="12">
+        </div>
+        <div class="item">
+            <img src="mare.jpg" class="img-fluid" alt="12">
+        </div>
+        <div class="item">
+            <img src="mare.jpg" class="img-fluid" alt="12">
+        </div>
+        <div class="item">
+            <img src="mare.jpg" class="img-fluid" alt="12">
+        </div>
+
+    </div>
+    
+    <!--  <div class="owl-carousel owl-theme owl-loaded owl-drag">
+
+
+
+            <div class="owl-stage-outer">
+                <div class="owl-stage" style="transform: translate3d(-960px, 0px, 0px); transition: all 0s ease 0s; width: 2880px;">
+                    <div class="owl-item cloned" style="width: 220px; margin-right: 20px;">
+                        <div class="item">
+                            <img src="mare.jpg" class="img-fluid" alt="12">
+                        </div>
+                    </div>
+                </div>
+                <div class="owl-stage" style="transform: translate3d(-960px, 0px, 0px); transition: all 0s ease 0s; width: 2880px;">
+                        <div class="owl-item cloned" style="width: 220px; margin-right: 20px;">
+                            <div class="item">
+                                <img src="mare.jpg" class="img-fluid" alt="12">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="owl-nav disabled">
+                    <button type="button" role="presentation" class="owl-prev">
+                    <span aria-label="Previous">‹</span></button>
+                     <button type="button" role="presentation" class="owl-next disabled">
+                     <span aria-label="Next">›</span></button></div>
+            <div class="owl-dots">
+                    <button role="button" class="owl-dot active"><span></span></button>
+                    <button role="button" class="owl-dot"><span></span></button></div>
+        </div>-->
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+            center:true,
+            items:1,
+            loop: false,
+            margin: 20,
+            responsiveClass: true,
+            responsive: {
+                0: {
+                    items: 1,
+                    nav: true,
+             
+                },
+                600: {
+                    items: 3,
+                    nav: false,
+            
+                },
+                1000: {
+                    items: 5,
+                    nav: true,
+                    loop: false,
+                
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
+
+
