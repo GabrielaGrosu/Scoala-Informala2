@@ -40,6 +40,10 @@ html {
     border-radius: 5px;
 }
 
+.cos:hover{
+    background-color: #509753;
+}
+
 .src_style {
     width: 20px;
 }

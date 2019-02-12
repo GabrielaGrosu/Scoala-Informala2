@@ -1,169 +1,174 @@
-    body,
-        html {
-            margin: 0;
-            padding: 0;
-            background-color: #bfc7c3;
-            background-image: url("fresh-snow.png");
-        }
+body,
+html {
+    margin: 0;
+    padding: 0;
+    background-color: #bfc7c3;
+    background-image: url("fresh-snow.png");
+}
 
-        #poza {
-            display: inline;
-            max-width: 80%;
-            padding: 30px;
-        }
+#poza {
+    display: inline;
+    max-width: 80%;
+    padding: 30px;
+}
 
-        .src_style {
-            width: 20px;
-        }
+.src_style {
+    width: 20px;
+}
 
-        #titlu {
-            display: inline;
-            color: #209124;
-            font-family: 'Open Sans', sans-serif;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 30px;
-            font-weight: 800;
-            letter-spacing: -3px;
-            line-height: 1;
-            text-shadow: #78b07a 3px 2px 0;
-            position: relative;
-            vertical-align: top;
-        }
+#titlu {
+    display: inline;
+    color: #209124;
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -3px;
+    line-height: 1;
+    text-shadow: #78b07a 3px 2px 0;
+    position: relative;
+    vertical-align: top;
+}
 
-        #link_titlu {
-            color: #209124;
-        }
+#link_titlu {
+    color: #209124 ;
+}
 
-        .cos {
-            float: right;
-            order: 1;
-            display: inline-block;
-            border: 1.5px solid #209124;
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-            border-radius: 5px;
-        }
+.cos {
+    float: right;
+    order: 1;
+    display: inline-block;
+    border: 1.5px solid #209124;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.cos:hover{
+    background-color: #509753;
+}
 
-        .informatii_produs {
-            font-family: 'Roboto', sans-serif;
-            font-size: 20px;
-            vertical-align: middle;
-            margin-left: 50px;
-            display: inline-block;
-            vertical-align: top;
-            margin-top: 25px;
-        }
+#informatii_produs {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    vertical-align: middle;
 
-        input[name=cantitate] {
-            width: 40px;
-        }
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 25px;
+    float:right;
+}
 
-        input[type=submit] {
-            margin-top: 5px;
-        }
+input[name=cantitate] {
+    width: 40px;
+}
 
-        .spatiere {
-            display: none;
-        }
+input[type=submit] {
+    margin-top: 5px;
+}
 
-        .spatiere.visible {
-            border: 1.5px solid white;
-            border-radius: 10px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            width: 60%;
-            font-family: 'Roboto', sans-serif;
-            text-align: center;
-        }
+.spatiere {
+    display: none;
+}
 
-        #snackbar {
-            display: none;
-        }
+.spatiere.visible {
+    border: 1.5px solid white;
+    border-radius: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
 
-        #snackbar.visible {
-            background-color: rgb(170, 170, 170);
-            color: white;
-            height: 30px;
-            padding-top: 10px;
-            display: block;
-            text-align: center;
-        }
+#snackbar {
+    display: none;
+}
 
-        a {
-            text-decoration: none;
-            color: black;
-        }
+#snackbar.visible {
+    background-color: rgb(170, 170, 170);
+    color: white;
+    height: 30px;
+    padding-top: 10px;
+    display: block;
+    text-align: center;
+}
 
-        #stocInsuficient {
-            color: red;
-            display: block;
-        }
+a {
+    text-decoration: none;
+    color: black;
+}
 
-        #stocInsuficient.invisible {
-            display: none;
+#stocInsuficient {
+    color: red;
+    display: block;
+}
 
-        }
+#stocInsuficient.invisible {
+    display: none;
 
-        #lei {
-            display: inline-block;
-            padding-top: 15px;
-        }
+}
 
-        #pret {
-            display: inline-block;
-            padding-top: 15px;
-        }
+#lei {
+    display: inline-block;
+    padding-top: 15px;
+}
 
-        .imagine {
-            display: inline-block;
-        }
+#pret {
+    display: inline-block;
+    padding-top: 15px;
+}
 
-        .item {
-            width: 200px;
-        }
+#imagine {
+    display: inline-block;
+    float:left;
+}
 
-        .owl-carousel {
-            margin-left: auto;
-            margin-right: auto;
-            width: 45%;
-        }
+.item {
+    width: 200px;
+}
 
-        #recomandate {
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-        }
+.owl-carousel {
+    margin-left: auto;
+    margin-right: auto;
+    width: 45%;
+}
 
-        #loading_gif {
-            text-align: center;
-        }
+#recomandate {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
 
-        #loading {
-            width: 10%;
-        }
+#loading_gif {
+    text-align: center;
+}
 
-        #loading.invisible {
-            display: none;
-        }
+#loading {
+    width: 10%;
+}
 
-        #header_style {
-            margin: 20px auto 50px auto;
-            width: 60%;
-        }
+#loading.invisible {
+    display: none;
+}
 
-        .buton_adaugare {
-            border: 1.5px solid #209124;
-            font-family: 'Roboto', sans-serif;
-            font-size: 18px;
-            border-radius: 5px;
-        }
+#header_style {
+    margin: 20px auto 50px auto;
+    width: 60%;
+}
 
-        .black {
-            color: black;
-        }
+.buton_adaugare {
+    border: 1.5px solid #209124;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    border-radius: 5px;
+}
 
-        .owl-dot {
-            background-color: #80808073 !important;
-        }
+.black {
+    color: black;
+}
+
+.owl-dot {
+    background-color: #80808073 !important;
+}
